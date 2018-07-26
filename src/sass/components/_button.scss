@@ -1,0 +1,54 @@
+.btn{
+  &:link, /* selector pseudo class - special state which functions as a link*/
+  &:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 4rem; /* first one at the top and bottom second on the left and right */
+      display: inline-block; /* if we want to give paddings and all that shit width heigth it needs to be an inline block*/
+      border-radius: 10rem; /*zaokrąglenie */
+      transition: all .2s; /*all properties are animated */
+      position: relative;
+      font-size: 1.6rem;
+  }
+
+  &:hover {
+    transform: translateY(-3px);/*negative to move up the button*/
+    box-shadow: 0 1rem 2rem rgba($color-black,.2);/* first is x axis second is y axis and the third is blur*/
+    &:after {
+        transform: scaleX(1.4) scaleY(1.6); /* double the size*/
+        opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);/*negative to move up the button*/
+    box-shadow: 0 .5rem 1rem rgba($color-black,.2)
+  }
+
+  &--white {
+  background-color: $color-white;
+  color: $color-grey-dark;
+
+  &:after {
+  background-color: $color-white;
+    }
+  }
+
+  &::after{
+    content: ""; /*content has to be specified always*/
+    display: inline-block;
+    height: 100%; /*height of the child element in relation to the parent*/
+    width: 100%; /*width of the child element in relation to the parent*/
+    border-radius: 10rem;
+    position: absolute; /*it needs the first element with the relative position that it can find \\ it is used so it appears BEHIND the button not BELOW it */
+    top: 0;
+    left: 0;
+    z-index: -1;  /* behind */
+    transition: all .4s;
+  }
+
+  &--animated{
+    animation: moveInBottom .5s ease-out .75s;/* animation name animation duration animation function ??? delay*/
+    animation-fill-mode: backwards; /* automatically apply the style to all parent elements, before the animation starts*/
+  }
+}

@@ -1,0 +1,201 @@
+$color-primary: #55c57a;
+$color-primary-light:#7ed56f;
+$color-primary-dark:#28b485;
+
+$color-grey-dark: #777;
+$color-white: #fff;
+$color-black: #000;
+
+*,/* all elements */
+*::after,
+ *::before{
+  margin: 0;
+  padding:0;
+  box-sizing: inherit; /* each and every element will inherit */
+}
+
+html {
+
+font-size:62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif; /* the , signifies that if not available use sans-serif */
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: $color-grey-dark;
+  padding: 3rem;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 95vh; /* 95% of the viewport heigth */
+  background-image: linear-gradient(
+    to right bottom, /* to right - from LEFT TO RIGHT */
+    rgba($color-primary-light, 0.8), /* rgba(126, 213, 111, - RGBA FROM HEX #7ed56f the last 0.8 is opacity*/
+    rgba($color-primary-dark, 0.8)),
+    url(../img/hero.jpg);
+
+
+  background-size: cover; /* width of the viewport it will always fit the component */
+  background-position: top;
+  position: relative;
+  /* Important !*/
+  clip-path: polygon(0 0, 100% 0, 100% 75%,0 100%);
+
+  &__logo-box{
+      position: absolute;
+      top: 4rem; /* counting from the parent element which is relative*/
+      left: 4rem;/* counting from the parent element which is relative*/
+  }
+
+  &__logo{
+    height: 3.5rem;
+  }
+
+
+  &__text-box {
+    position: absolute;
+    top: 40%; /* top from the parent element BUT it counts from the border not the cnter of the text box*/
+    left:50%; /* left from the parent element BUT it counts from the border not the cnter of the text box*/
+    transform: translate(-50%, -50%); /* this TRANSLATES the fact that we need the CENTER of the element to be in the center of the image and NOT the left and top borders (as specified above)*/
+    text-align: center;
+  }
+
+
+}
+
+.heading-primary{
+color: $color-white;
+text-transform: uppercase;
+/* since this is the element that is moving with the keyframes the 'bug' with the little move should be fixed here, backface-visibility: hidden is hidden to the user - backpart is hidden*/
+backface-visibility: hidden;
+margin-bottom: 6rem;
+
+
+&--main{
+  display: block; /* occupies 100% of the space so it forces the next element below it !!!!!!!!!!!!!!!!!!!!!!!!!*/
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out; /* start faster but slower at the end */
+
+
+  /*
+  animation-iteration-count: 3;
+  animation-delay: 3s;
+  */
+}
+
+&--sub{
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
+  animation: moveInRight 1s ease-out;
+}
+}
+
+@keyframes moveInLeft {
+    0%{
+    opacity: 0;
+    transform: translateX(-10rem);
+    }
+
+     80% {
+       transform: translateX(1rem);
+    }
+
+    100%{
+      opacity: 1;
+      transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0%{
+    opacity: 0;
+    transform: translateX(10rem)
+    }
+
+     80% {
+       transform: translateX(-1rem);
+    }
+
+    100%{
+      opacity: 1;
+      transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0%{
+    opacity: 0;
+    transform: translateY(3rem)
+    }
+
+    100%{
+      opacity: 1;
+      transform: translate(0);
+    }
+}
+
+
+.btn{
+  &:link, /* selector pseudo class - special state which functions as a link*/
+  &:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 4rem; /* first one at the top and bottom second on the left and right */
+      display: inline-block; /* if we want to give paddings and all that shit width heigth it needs to be an inline block*/
+      border-radius: 10rem; /*zaokrąglenie */
+      transition: all .2s; /*all properties are animated */
+      position: relative;
+      font-size: 1.6rem;
+  }
+
+  &:hover {
+    transform: translateY(-3px);/*negative to move up the button*/
+    box-shadow: 0 1rem 2rem rgba($color-black,.2);/* first is x axis second is y axis and the third is blur*/
+    &:after {
+        transform: scaleX(1.4) scaleY(1.6); /* double the size*/
+        opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);/*negative to move up the button*/
+    box-shadow: 0 .5rem 1rem rgba($color-black,.2)
+  }
+
+  &--white {
+  background-color: $color-white;
+  color: $color-grey-dark;
+
+  &:after {
+  background-color: $color-white;
+    }
+  }
+
+  &::after{
+    content: ""; /*content has to be specified always*/
+    display: inline-block;
+    height: 100%; /*height of the child element in relation to the parent*/
+    width: 100%; /*width of the child element in relation to the parent*/
+    border-radius: 10rem;
+    position: absolute; /*it needs the first element with the relative position that it can find \\ it is used so it appears BEHIND the button not BELOW it */
+    top: 0;
+    left: 0;
+    z-index: -1;  /* behind */
+    transition: all .4s;
+  }
+
+  &--animated{
+    animation: moveInBottom .5s ease-out .75s;/* animation name animation duration animation function ??? delay*/
+    animation-fill-mode: backwards; /* automatically apply the style to all parent elements, before the animation starts*/
+  }
+}

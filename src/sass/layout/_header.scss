@@ -1,0 +1,36 @@
+.header {
+  height: 95vh; /* 95% of the viewport heigth */
+  background-image: linear-gradient(
+    to right bottom, /* to right - from LEFT TO RIGHT */
+    rgba($color-primary-light, 0.8), /* rgba(126, 213, 111, - RGBA FROM HEX #7ed56f the last 0.8 is opacity*/
+    rgba($color-primary-dark, 0.8)),
+    url(../img/hero.jpg);
+
+
+  background-size: cover; /* width of the viewport it will always fit the component */
+  background-position: top;
+  position: relative;
+  /* Important !*/
+  clip-path: polygon(0 0, 100% 0, 100% 75%,0 100%);
+
+  &__logo-box{
+      position: absolute;
+      top: 4rem; /* counting from the parent element which is relative*/
+      left: 4rem;/* counting from the parent element which is relative*/
+  }
+
+  &__logo{
+    height: 3.5rem;
+  }
+
+
+  &__text-box {
+    position: absolute;
+    top: 40%; /* top from the parent element BUT it counts from the border not the cnter of the text box*/
+    left:50%; /* left from the parent element BUT it counts from the border not the cnter of the text box*/
+    transform: translate(-50%, -50%); /* this TRANSLATES the fact that we need the CENTER of the element to be in the center of the image and NOT the left and top borders (as specified above)*/
+    text-align: center;
+  }
+
+
+}

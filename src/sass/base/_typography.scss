@@ -1,0 +1,63 @@
+body {
+  font-family: "Lato", sans-serif; /* the , signifies that if not available use sans-serif */
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: $color-grey-dark;
+  padding: 3rem;
+  box-sizing: border-box;
+}
+
+
+
+.heading-primary{
+color: $color-white;
+text-transform: uppercase;
+/* since this is the element that is moving with the keyframes the 'bug' with the little move should be fixed here, backface-visibility: hidden is hidden to the user - backpart is hidden*/
+backface-visibility: hidden;
+margin-bottom: 6rem;
+
+
+&--main{
+  display: block; /* occupies 100% of the space so it forces the next element below it !!!!!!!!!!!!!!!!!!!!!!!!!*/
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out; /* start faster but slower at the end */
+
+
+  /*
+  animation-iteration-count: 3;
+  animation-delay: 3s;
+  */
+}
+
+&--sub{
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
+  animation: moveInRight 1s ease-out;
+  }
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block; // to CUT the green
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  -webkit-background-clip: text;
+  color: transparent; // the text is transparent otherwise it would block the color
+  letter-spacing: 2px; // pixel due to small size of the spacing
+  transition: all .2s;
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow:.5rem 1rem 2rem rgba($color-black, .2);
+  }
+
+}
