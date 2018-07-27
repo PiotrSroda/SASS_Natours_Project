@@ -22,7 +22,7 @@ class App extends Component {
 
         <main>
             <section class= 'section-about'>
-              <div class='u-center-text'>
+              <div class='u-center-text u-margin-bottom-big'> {/*UTILITY CLASSES*/}
                 <h2 class= 'heading-secondary'>
                 Exciting tours for adventurous people
                 </h2>
@@ -30,7 +30,17 @@ class App extends Component {
 
                 <div class='row'>
                   <div class='col-1-of-2'>
-                    Text content
+                    <h3 className="heading-tertiary u-margin-bottom-small"> You're going to fall in love with nature</h3>
+                    <p class="paragraph">
+                       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+
+                    <h3 className="heading-tertiary u-margin-bottom-small"> Live adventures like you never have before</h3>
+                    <p class="paragraph">
+                       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+
+                    <a href="#" class="btn-text">Learn more &rarr;</a>                    
                   </div>
                   <div class='col-1-of-2'>
                     Image composition

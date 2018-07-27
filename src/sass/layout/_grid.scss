@@ -1,6 +1,5 @@
 .row {
   max-width: $grid-width; //equals to 1140px as it is a standard, it alwas occupies 100% of the max-width
-  background-color: #eee;
   margin: 0 auto; // margin from top bottom left and right is zero auto - will automatically figure out the margin element will be centered
 
 
@@ -11,7 +10,6 @@
       @include clearfix;
 
       [class^='col-']{ //^ symbol means the beggining of the NAME of the class [] - is an attribute selectore eg. class, src, etc.
-        background-color: orangered;
         float: left; // it collapses widht 0 heigth
 
         &:not(:last-child) {
