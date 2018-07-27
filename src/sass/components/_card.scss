@@ -1,17 +1,16 @@
 .card{
+  //functionality
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 50rem; // need to specify since it collapses cannot do clearfix as it is not a float element and they are absolute position
+  height: 52rem; // need to specify since it collapses cannot do clearfix as it is not a float element and they are absolute position
 
 
 
   &__side {
-    background-color: orangered;
-    color: white;
     font-size: 2rem;
 
-    height: 50rem;
+    height: 52rem;
     transition: all .8s ease; // ease to loosen the animation
     position: absolute;
     top: 0;
@@ -19,6 +18,7 @@
     width: 100%;
     backface-visibility: hidden; //hides the BACK part of the element
     border-radius: 3px;
+    overflow: hidden; //the image is overlapping so we need to hide it
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
     &--front{
@@ -42,9 +42,71 @@
 
 
   &:hover &__side--front {  // when the card is hovered then the .card_side takes place
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
   }
   &:hover &__side--back {  // when the card is hovered then the .card_side takes place
     transform: rotateY(0deg);
+  }
+//FRONT SIDE STYLING
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen; // Blending color and image not working on IE and EDGE
+    -webkit-clip-path:polygon(0 0, 100% 0,100% 85%, 0 100%);
+    clip-path:polygon(0 0, 100% 0,100% 85%, 0 100%);
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
+      url(../img/nat-5.jpg)
+
+    }
+    &--2 {
+      background-image: url(../img/nat-5.jpg);
+    }
+    &--3 {
+      background-image: url(../img/nat-5.jpg);
+    }
+  }
+
+  &__heading{
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color:$color-white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+  }
+
+  &__heading-span {
+  padding: 1rem 1.5rem;
+  -webkit-box-decoration-break: clone; // webkit to enforce on other websites
+  box-decoration-break: clone; // this treats the 2 separate lines of text as two different elements
+    &--1{
+      background-image: linear-gradient(to right bottom,
+      rgba($color-secondary-light, .85),
+      rgba($color-secondary-dark, .85));
+    }
+  }
+
+  &__details{
+    padding: 3rem;
+    ul{
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+
+      li{
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 1rem;
+
+      &:not(:last-child){
+        border-bottom: 1px solid $color-grey-light-2;
+        }
+      }
+    }
   }
 }
