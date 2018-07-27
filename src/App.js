@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import logo from './img/logo-white.png';
 import './sass/style.css';
+import Photo_1 from './img/nat-1-large.jpg';
+import Photo_2 from './img/nat-2-large.jpg';
+import Photo_3 from './img/nat-3-large.jpg';
+
 
 class App extends Component {
   render() {
@@ -40,10 +44,14 @@ class App extends Component {
                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
 
-                    <a href="#" class="btn-text">Learn more &rarr;</a>                    
+                    <a href="#" class="btn-text">Learn more &rarr;</a>
                   </div>
                   <div class='col-1-of-2'>
-                    Image composition
+                    <div class="composition">
+                      <img src= {Photo_1} alt="P1" class="composition__photo composition__photo--p1"/>
+                      <img src= {Photo_2} alt="P2" class="composition__photo composition__photo--p2"/>
+                      <img src= {Photo_3} alt="P3" class="composition__photo composition__photo--p3"/>
+                    </div>
                   </div>
                 </div>
             </section>
