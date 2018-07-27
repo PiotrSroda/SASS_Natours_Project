@@ -31,7 +31,7 @@ class App extends Component {
                 <h2 class= 'heading-secondary'>
                 Exciting tours for adventurous people
                 </h2>
-                </div>
+              </div>
 
                 <div class='row'>
                   <div class='col-1-of-2'>
@@ -101,6 +101,47 @@ class App extends Component {
                     </div>
                   </div>
                 </div>
+            </section>
+
+            <section class="section-tours">
+              <div class='u-center-text u-margin-bottom-big'> {/*UTILITY CLASSES*/}
+                <h2 class= 'heading-secondary'>
+                  Most popular tours
+                </h2>
+              </div>
+
+              <div class='row'>
+                <div class='col-1-of-3'>
+                  <div class="card">
+                    <div class="card__side card__side--front">
+                      FRONT
+                    </div>
+                    <div class="card__side card__side--back card__side--back-1">
+                      BACK
+                    </div>
+                  </div>
+                </div>
+                <div class='col-1-of-3'>
+                  <div class="card">
+                    <div class="card__side card__side--front">
+                      FRONT
+                    </div>
+                    <div class="card__side card__side--back card__side--back-2">
+                      BACK
+                    </div>
+                  </div>
+                </div>
+                <div class='col-1-of-3'>
+                  <div class="card">
+                    <div class="card__side card__side--front">
+                      FRONT
+                    </div>
+                    <div class="card__side card__side--back card__side--back-3">
+                      BACK
+                    </div>
+                  </div>
+                </div>
+              </div>
             </section>
         </main>
 {/*
