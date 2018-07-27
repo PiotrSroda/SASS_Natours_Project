@@ -3,3 +3,20 @@
   padding: 25rem 0;
   margin-top: -20vh;
 }
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+    to right bottom, /* to right - from LEFT TO RIGHT */
+    rgba($color-primary-light, 0.8), /* rgba(126, 213, 111, - RGBA FROM HEX #7ed56f the last 0.8 is opacity*/
+    rgba($color-primary-dark, 0.8)),
+    url(../img/nat-4.jpg);
+    background-size: cover;
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+
+    & > * { //select everything that is a DIRECT CHILD COMPILED CSS .section-features
+      transform: skewY(7deg);
+
+    }
+}

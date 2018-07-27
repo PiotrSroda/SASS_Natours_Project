@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './img/logo-white.png';
 import './sass/style.css';
+import './fonts/icon-font.css';
 import Photo_1 from './img/nat-1-large.jpg';
 import Photo_2 from './img/nat-2-large.jpg';
 import Photo_3 from './img/nat-3-large.jpg';
@@ -51,6 +52,52 @@ class App extends Component {
                       <img src= {Photo_1} alt="P1" class="composition__photo composition__photo--p1"/>
                       <img src= {Photo_2} alt="P2" class="composition__photo composition__photo--p2"/>
                       <img src= {Photo_3} alt="P3" class="composition__photo composition__photo--p3"/>
+                    </div>
+                  </div>
+                </div>
+            </section>
+
+            <section class="section-features">
+
+
+                <div class="row">
+                  <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-world"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">Explore the world</h3>
+                        <p class="feature-box__text">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                  </div>
+
+                  <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-compass"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">Meet nature</h3>
+                        <p class="feature-box__text">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                  </div>
+
+                  <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-map"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">Find Your way</h3>
+                        <p class="feature-box__text">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                  </div>
+
+                  <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-heart"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">Live a healthier life</h3>
+                        <p class="feature-box__text">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
                     </div>
                   </div>
                 </div>
