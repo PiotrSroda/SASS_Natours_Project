@@ -203,9 +203,19 @@ class App extends Component {
                 </div>
               </div>
 
-              <div class='u-center-text u-margin-top-big'>
+              <div class='u-center-text u-margin-top-huge'>
                 <a href="#" class="btn btn--green">Discover all tours</a>
               </div>
+
+            </section>
+
+            <section class="section-stories">
+                <div class="u-center-text umargin-bottom-big">
+                  <h2 class="heading-secondary">
+                    Most Popular tours
+                  </h2>
+                </div>
+
 
             </section>
         </main>
