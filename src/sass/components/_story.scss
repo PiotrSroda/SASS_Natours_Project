@@ -1,0 +1,63 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, .1);
+  background-color: rgba($color-white, .6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+
+  &__text {
+    transform: skewX(12deg);
+
+  }
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left; // it "floats" around the background-image
+    background-color: orange;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+
+    -webkit-clip-path:circle(50% at 50% 50%);
+    clip-path:circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg); // moving the circle since it is floated we should not experiment with width || SKEW has to be hardcoded as there is no possibility to add two transform elements by & > *
+    position: relative;
+  }
+
+  &__img{
+    height: 100% ;// Width of the PARENT
+    transform: translateX(-4rem) scale(1.4); // the image is MOVED to the left
+    backface-visibility: hidden;
+    transition: all .5s;
+  }
+
+  &__caption{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden; // little glitch needs the hidden
+  }
+  &:hover &__caption{
+    opacity:1;
+    transform: translate(-50%, -50%); // Needs to be the same as Translate and NOT translatY since it would change the image in the wrong direction
+  }
+
+  &:hover &__caption{
+    opacity:1;
+    transform: translate(-50%, -50%); // Needs to be the same as Translate and NOT translatY since it would change the image in the wrong direction
+  }
+  &:hover &__img{
+    transform: translateX(-4rem) scale(1); // Needs to be the same as Translate and NOT translatY since it would change the image in the wrong direction
+    filter: blur(3px) brightness(80%);
+  }
+}
