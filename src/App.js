@@ -12,6 +12,8 @@ import video from './img/video.mp4';
 import video1 from './img/video.webm';
 
 
+
+
 class App extends Component {
   render() {
     return (
@@ -46,7 +48,7 @@ class App extends Component {
             <span className='heading-primary--sub'>is where life happens</span>
           </h1>
 
-          <a href='#' className='btn btn--white btn--animated'>Discover our tours</a>
+          <a href='#section-tours' className='btn btn--white btn--animated'>Discover our tours</a>
         </div>
         </header>
 
@@ -70,7 +72,7 @@ class App extends Component {
                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
 
-                    <a href="#" className="btn-text">Learn more &rarr;</a>
+                    <a href="#popup" className="btn-text">Learn more &rarr;</a>
                   </div>
                   <div className='col-1-of-2'>
                     <div className="composition">
@@ -128,7 +130,7 @@ class App extends Component {
                 </div>
             </section>
 
-            <section className="section-tours">
+            <section className="section-tours" id="section-tours">
               <div className='u-center-text u-margin-bottom-big'> {/*UTILITY classNameES*/}
                 <h2 className= 'heading-secondary'>
                   Most popular tours
@@ -161,7 +163,7 @@ class App extends Component {
                               <p className="card__price-only">Only</p>
                               <p className="card__price-value">$297</p>
                           </div>
-                          <a href="" className="btn btn--white">Book now!</a>
+                          <a href="#popup" className="btn btn--white">Book now!</a>
                       </div>
                     </div>
                   </div>
@@ -191,7 +193,7 @@ class App extends Component {
                               <p className="card__price-only">Only</p>
                               <p className="card__price-value">$585</p>
                           </div>
-                          <a href="" className="btn btn--white">Book now!</a>
+                          <a href="#popup" className="btn btn--white">Book now!</a>
                       </div>
                     </div>
                   </div>
@@ -221,7 +223,7 @@ class App extends Component {
                               <p className="card__price-only">Only</p>
                               <p className="card__price-value">$767</p>
                           </div>
-                          <a href="" className="btn btn--white">Book now!</a>
+                          <a href="#popup" className="btn btn--white">Book now!</a>
                       </div>
                     </div>
                   </div>
@@ -229,7 +231,7 @@ class App extends Component {
               </div>
 
               <div className='u-center-text u-margin-top-huge'>
-                <a href="#" className="btn btn--green">Discover all tours</a>
+                <a href="#popup" className="btn btn--green">Discover all tours</a>
               </div>
 
             </section>
@@ -281,7 +283,7 @@ class App extends Component {
               </div>
 
               <div className='u-center-text u-margin-top-huge'>
-                <a href="#" className="btn-text">Read all stories &rarr;</a>
+                <a href="#popup" className="btn-text">Read all stories &rarr;</a>
               </div>
             </section>
 
@@ -355,7 +357,7 @@ class App extends Component {
                 </div>
                 <div className="col-1-of-2">
                 <p className="footer__copyright">
-                Built by <a href="#" class="footer__link">Jonas Schmedtmann</a> for his online course <a href="#" class="footer__link">Advanced CSS and Sass</a>.
+                Built by <a href="" class="footer__link">Jonas Schmedtmann</a> for his online course <a href="" class="footer__link">Advanced CSS and Sass</a>.
                 Copyright &copy; by Jonas Schmedtmann. You are 100% allowed to use this webpage for both personal
                 and commercial use, but NOT to claim it as your own design. A credit to the original author, Jonas
                 Schmedtmann, is of course highly appreciated!
@@ -364,6 +366,26 @@ class App extends Component {
                 </div>
               </div>
         </footer>
+
+        <div className="popup" id="popup">
+          <div className="popup__content">
+            <div className="popup__left">
+            <img src={figure1} alt="Tour 1" className="popup__img"/>
+            <img src={figure2} alt="Tour 2" className="popup__img"/>
+            </div>
+            <div className="popup__right">
+              <a href="#section-tours" class="popup__close">&times;</a>
+              <h2 className="heading-secondary u-margin-bottom-small">Start booking now</h2>
+              <h3 className="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before booking</h3>
+              <p className="popup__text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla sapien ut molestie interdum. Donec mattis malesuada vehicula. Proin elementum vehicula porta. Nullam sit amet lacus lacinia, finibus nisl eu, condimentum leo. Nam elementum lectus id neque vestibulum, et tincidunt elit rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus quis nulla eu eleifend.
+
+              </p>
+              <a href="" className="btn btn--green">Book now</a>
+            </div>
+          </div>
+
+        </div>
 {/*
         <section className='grid-test'>
           <div className='row'>
