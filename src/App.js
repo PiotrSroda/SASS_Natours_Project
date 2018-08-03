@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './img/logo-white.png';
+import logo2x from './img/logo-green-2x.png';
 import './sass/style.css';
 import './fonts/icon-font.css';
 import Photo_1 from './img/nat-1-large.jpg';
@@ -14,7 +15,27 @@ import video1 from './img/video.webm';
 class App extends Component {
   render() {
     return (
-    <div>
+    <div> {/*div that combines the whole site*/}
+    <div className="navigation">
+      <input type="checkbox" className="navigation__checkbox" id="navi-toggle"/>
+
+      <label htmlFor="navi-toggle" className="navigation__button">
+          <span className="navigation__icon">&nbsp;</span>
+      </label>
+
+      <div className="navigation__background">&nbsp;</div>
+
+      <nav className="navigation__nav">
+        <ul className="navigation__list">
+          <li className="navigation__item"><a href="" className="navigation__link"><span>01</span>About Natours</a></li>
+          <li className="navigation__item"><a href="" className="navigation__link"><span>02</span>Your benefits</a></li>
+          <li className="navigation__item"><a href="" className="navigation__link"><span>03</span>Popular tours</a></li>
+          <li className="navigation__item"><a href="" className="navigation__link"><span>04</span>Stories</a></li>
+          <li className="navigation__item"><a href="" className="navigation__link"><span>05</span>Book now</a></li>
+        </ul>
+
+      </nav>
+    </div>
       <header className='header'>
         <div className='header__logo-box'>
           <img src = {logo} alt='Logo' className='header__logo'/>
@@ -315,6 +336,34 @@ class App extends Component {
               </div>
             </section>
         </main>
+
+        <footer className="footer">
+            <div className="footer__logo-box">
+              <img src={logo2x} alt="Full logo" class="footer__logo"/>
+                </div>
+              <div className="row">
+                <div className="col-1-of-2">
+                  <div className="footer__navigation">
+                    <ul className="footer__list">
+                      <li className="footer__item"><a href="" className="footer__link">Company</a></li>
+                      <li className="footer__item"><a href="" className="footer__link">Contact us</a></li>
+                      <li className="footer__item"><a href="" className="footer__link">Carrers</a></li>
+                      <li className="footer__item"><a href="" className="footer__link">Privacy policy</a></li>
+                      <li className="footer__item"><a href="" className="footer__link">Terms</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="col-1-of-2">
+                <p className="footer__copyright">
+                Built by <a href="#" class="footer__link">Jonas Schmedtmann</a> for his online course <a href="#" class="footer__link">Advanced CSS and Sass</a>.
+                Copyright &copy; by Jonas Schmedtmann. You are 100% allowed to use this webpage for both personal
+                and commercial use, but NOT to claim it as your own design. A credit to the original author, Jonas
+                Schmedtmann, is of course highly appreciated!
+
+                </p>
+                </div>
+              </div>
+        </footer>
 {/*
         <section className='grid-test'>
           <div className='row'>
