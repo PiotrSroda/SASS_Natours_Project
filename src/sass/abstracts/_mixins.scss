@@ -1,14 +1,75 @@
 @mixin clearfix {
   &::after {
-    content:'';
+    content: '';
     display: table;
-    clear:both;
+    clear: both;
   }
 }
-
 @mixin position-central {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+// MEDIA QUERY MANAGER
+/*
+
+0 - 600px: phone
+600 - 900:  Tablet portrait mode
+900 - 1200: Tablet Landscape mode
+1200 - 1800: Normal styles
+1800 +: Big desktop (PC)
+
+*/
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+@mixin respond-phone {
+  @media (max-width: 600px) {
+    @content
+  }; // @content - passing a block of code into the mixin itself
+}
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+THE SAME CODE BELOW
+*/
+/*
+$breakpoint agument choices:
+respond
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+
+
+ 1 em = 16px */
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+       @content
+    };
+    //If statement \\ 600px
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content
+    };
+     //If statement \\ 900px
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content
+    };
+     //If statement \\ 1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      @content
+    }; //If statement \\ 1800px
+  };
+
 }
