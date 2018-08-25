@@ -11,6 +11,7 @@
 html {
   //this defines what 1rem is
   font-size: 62.5%; //1 rem = 10p; 1-px16px = 62.5%
+  scroll-behavior: smooth;
 
 
   /*  @include respond-phone {
@@ -29,7 +30,7 @@ html {
     font-size: 50%; // 1 rem = 8px, 8/16=50%
   }
 
-  
+
 
   @include respond(big-desktop) {
     font-size: 75%; // 1 rem = 12px, 12/16=75%

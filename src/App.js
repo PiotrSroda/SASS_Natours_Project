@@ -81,13 +81,29 @@ class App extends Component {
                     <a href="#popup" className="btn-text">Learn more &rarr;</a>
                   </div>
                   <div className='col-1-of-2'>
+                    {/* when the below media queries apply the browser chooses on its own the image shown  */}
                     <div className="composition">
-                      <img src={Photo_1} srcSet={`${Photo_1s} 300w, ${Photo_1} 1000w`} />
+                      <img srcSet={`${Photo_1s} 300w, ${Photo_1} 1000w`}
+                           sizes="(max-width: 62.25em) 20vw, (max-width: 600px) 30vw, 300px"
+                           alt="P1"
+                           className="composition__photo composition__photo--p1"
+                           src={Photo_1}/>
+                      <img srcSet={`${Photo_2s} 300w, ${Photo_2} 1000w`}
+                          sizes="(max-width: 62.25em) 20vw, (max-width: 600px) 30vw, 300px"
+                          alt="P1"
+                          className="composition__photo composition__photo--p2"
+                          src={Photo_1}/>
+                      <img srcSet={`${Photo_3s} 300w, ${Photo_3} 1000w`}
+                           sizes="(max-width: 62.25em) 20vw, (max-width: 600px) 30vw, 300px"
+                           alt="P1"
+                           className="composition__photo composition__photo--p3"
+                           src={Photo_1}/>
 
-
+                           {/*
                       <img src= {Photo_1} alt="P1" className="composition__photo composition__photo--p1"/>
                       <img src= {Photo_2} alt="P2" className="composition__photo composition__photo--p2"/>
                       <img src= {Photo_3} alt="P3" className="composition__photo composition__photo--p3"/>
+                            */}
                     </div>
                   </div>
                 </div>
@@ -352,8 +368,10 @@ class App extends Component {
             <div className="footer__logo-box">
 
               <picture className="footer__logo">
-                  <source src={logo1xs} srcSet={`${logo1xs} 1x, ${logo2xs} 2x`} media="(max-width: 37.5em)"/>
-                  <img src={logo2x} srcSet={`${logo1x} 1x, ${logo2x} 2x`} alt="Full logo" className="footer__logo"/>
+                  <source  srcSet={`${logo1xs} 1x, ${logo2xs} 2x`}
+                    media="(max-width: 37.5em)"/>
+                    {/* Forcing the browser to apply this image when above media query is in place  */}
+                  <img  srcSet={`${logo1x} 1x, ${logo2x} 2x`} alt="Full logo" className="footer__logo" src={logo2x}/>
               </picture>
 
 
