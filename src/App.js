@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import logo from './img/logo-white.png';
+import logo1x from './img/logo-green-1x.png';
 import logo2x from './img/logo-green-2x.png';
+import logo1xs from './img/logo-green-small-1x.png';
+import logo2xs from './img/logo-green-small-2x.png';
 import './sass/style.css';
 import './fonts/icon-font.css';
 import Photo_1 from './img/nat-1-large.jpg';
 import Photo_2 from './img/nat-2-large.jpg';
 import Photo_3 from './img/nat-3-large.jpg';
+import Photo_1s from './img/nat-1.jpg';
+import Photo_2s from './img/nat-2.jpg';
+import Photo_3s from './img/nat-3.jpg';
 import figure1 from './img/nat-8.jpg';
 import figure2 from './img/nat-9.jpg';
 import video from './img/video.mp4';
@@ -76,6 +82,9 @@ class App extends Component {
                   </div>
                   <div className='col-1-of-2'>
                     <div className="composition">
+                      <img src={Photo_1} srcSet={`${Photo_1s} 300w, ${Photo_1} 1000w`} />
+
+
                       <img src= {Photo_1} alt="P1" className="composition__photo composition__photo--p1"/>
                       <img src= {Photo_2} alt="P2" className="composition__photo composition__photo--p2"/>
                       <img src= {Photo_3} alt="P3" className="composition__photo composition__photo--p3"/>
@@ -287,7 +296,7 @@ class App extends Component {
               </div>
             </section>
 
-            <section class="section-book">
+            <section className="section-book">
               <div className="row">
                 <div className="book">
                   <div className="book__form">
@@ -341,7 +350,13 @@ class App extends Component {
 
         <footer className="footer">
             <div className="footer__logo-box">
-              <img src={logo2x} alt="Full logo" class="footer__logo"/>
+
+              <picture className="footer__logo">
+                  <source src={logo1xs} srcSet={`${logo1xs} 1x, ${logo2xs} 2x`} media="(max-width: 37.5em)"/>
+                  <img src={logo2x} srcSet={`${logo1x} 1x, ${logo2x} 2x`} alt="Full logo" className="footer__logo"/>
+              </picture>
+
+
                 </div>
               <div className="row">
                 <div className="col-1-of-2">
@@ -357,7 +372,7 @@ class App extends Component {
                 </div>
                 <div className="col-1-of-2">
                 <p className="footer__copyright">
-                Built by <a href="" class="footer__link">Jonas Schmedtmann</a> for his online course <a href="" class="footer__link">Advanced CSS and Sass</a>.
+                Built by <a href="" className="footer__link">Jonas Schmedtmann</a> for his online course <a href="" className="footer__link">Advanced CSS and Sass</a>.
                 Copyright &copy; by Jonas Schmedtmann. You are 100% allowed to use this webpage for both personal
                 and commercial use, but NOT to claim it as your own design. A credit to the original author, Jonas
                 Schmedtmann, is of course highly appreciated!
@@ -370,18 +385,22 @@ class App extends Component {
         <div className="popup" id="popup">
           <div className="popup__content">
             <div className="popup__left">
-            <img src={figure1} alt="Tour 1" className="popup__img"/>
-            <img src={figure2} alt="Tour 2" className="popup__img"/>
+            <div className="popup__left-item"><img src={figure1} alt="Tour 1" className="popup__img"/></div>
+            <div className="popup__left-item"><img src={figure2} alt="Tour 2" className="popup__img"/></div>
             </div>
             <div className="popup__right">
-              <a href="#section-tours" class="popup__close">&times;</a>
+              <a href="#section-tours" className="popup__close">&times;</a>
+              <div className="popup__media-layout">
               <h2 className="heading-secondary u-margin-bottom-small">Start booking now</h2>
               <h3 className="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before booking</h3>
+              </div>
               <p className="popup__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla sapien ut molestie interdum. Donec mattis malesuada vehicula. Proin elementum vehicula porta. Nullam sit amet lacus lacinia, finibus nisl eu, condimentum leo. Nam elementum lectus id neque vestibulum, et tincidunt elit rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus quis nulla eu eleifend.
 
               </p>
+              <div className="popup__media-layout">
               <a href="" className="btn btn--green">Book now</a>
+              </div>
             </div>
           </div>
 

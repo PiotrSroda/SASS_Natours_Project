@@ -504,6 +504,9 @@ body {
   width: 90%;
   display: block;
   transition: all .3s; }
+  @media (max-width: 56.25em) {
+    .form__input {
+      width: 100%; } }
   .form__input::-webkit-input-placeholder {
     color: #999; }
   .form__input:focus {
@@ -529,6 +532,10 @@ body {
 .form__radio-group {
   width: 49%;
   display: inline-block; }
+  @media (max-width: 56.25em) {
+    .form__radio-group {
+      width: 100%;
+      margin-bottom: 2rem; } }
 
 .form__radio-input {
   display: none; }
@@ -576,6 +583,9 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all .3s; }
+  @media (max-width: 56.25em) {
+    .popup__media-layout {
+      text-align: center; } }
   .popup__content {
     position: absolute;
     top: 50%;
@@ -590,15 +600,41 @@ body {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.25);
     transition: all .5s .2s; }
+    @media (max-width: 56.25em) {
+      .popup__content {
+        display: flex;
+        flex-wrap: wrap; } }
   .popup__left {
     width: 33.333333%;
     display: table-cell;
     vertical-align: middle; }
+    @media (max-width: 56.25em) {
+      .popup__left {
+        width: 100%;
+        display: flex; } }
+    @media (max-width: 56.25em) {
+      .popup__left-item {
+        width: 50%;
+        flex-wrap: nowrap; } }
+    @media (max-width: 37.5em) {
+      .popup__left-item {
+        width: 50%;
+        flex-wrap: nowrap; } }
   .popup__right {
     width: 66.666666%;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem; }
+    @media (max-width: 56.25em) {
+      .popup__right {
+        width: 100%;
+        display: inline-block;
+        padding: 1rem 3rem; } }
+    @media (max-width: 37.5em) {
+      .popup__right {
+        width: 100%;
+        display: inline-block;
+        padding: 1rem 2rem; } }
   .popup__img {
     display: block;
     width: 100%; }
@@ -615,6 +651,10 @@ body {
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; }
+    @media (max-width: 56.25em) {
+      .popup__text {
+        -moz-column-count: initial;
+        column-count: initial; } }
   .popup:target {
     opacity: 1;
     visibility: visible; }
