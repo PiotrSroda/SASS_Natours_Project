@@ -11,6 +11,12 @@
   transition: all .3s;
 
 
+  @supports(-webkit-background-filter: blur(10px)) or (background-filter: blur(10px)) {
+    -webkit-background-filter: blur(10px);
+    background-filter: blur(10px);
+    background-color: rgba($color-black, .3);
+  }
+
       &__media-layout{
         @include respond (tab-port) {
           text-align: center;
@@ -29,6 +35,7 @@
       opacity: 0;
       transform: translate(-50%, -50%) scale(.25);
       transition: all .5s .2s;
+
 
       @include respond (tab-port) {
         display: flex;
